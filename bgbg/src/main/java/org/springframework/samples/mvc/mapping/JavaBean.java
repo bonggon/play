@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class JavaBean {
 
-	private String foo = "bar";
+	private String foo = "barfdsfds";
 
 	private String fruit = "apple";
 
