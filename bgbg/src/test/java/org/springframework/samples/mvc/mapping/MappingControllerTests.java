@@ -94,7 +94,7 @@ public class MappingControllerTests extends AbstractContextControllerTests {
 	@Test
 	public void byProducesJsonExtension() throws Exception {
 		this.mockMvc.perform(get("/mapping/produces.json"))
-				.andExpect(jsonPath("$.foo").value("bar"))
+				.andExpect(jsonPath("$.foo").value("barddddddddddd"))
 				.andExpect(jsonPath("$.fruit").value("apple"));
 	}
 
