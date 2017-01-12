@@ -10,7 +10,7 @@ public class SimpleControllerRevisited {
 
 	@RequestMapping(value="/simple/revisited", method=RequestMethod.GET, headers="Accept=text/plain")
 	public @ResponseBody String simple() {
-		return "Hello world revisited!";
+		return "Hello world revisfdsfsfited!";
 	}
 
 }
