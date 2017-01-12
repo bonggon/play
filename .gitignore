@@ -1,0 +1,6 @@
+bgbg/target/*
+bgbg/bin/*
+bgbg/bgbg/*
+.classpath
+.project
+.settings
