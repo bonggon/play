@@ -19,6 +19,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.bgsoft.samples.mvc.form.FormController;
+
 public class FormControllerTests {
 
 	private MockMvc mockMvc;

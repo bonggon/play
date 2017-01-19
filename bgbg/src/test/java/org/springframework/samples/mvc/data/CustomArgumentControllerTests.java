@@ -6,9 +6,10 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.samples.mvc.data.custom.CustomArgumentController;
-import org.springframework.samples.mvc.data.custom.CustomArgumentResolver;
 import org.springframework.test.web.servlet.MockMvc;
+
+import com.bgsoft.samples.mvc.data.custom.CustomArgumentController;
+import com.bgsoft.samples.mvc.data.custom.CustomArgumentResolver;
 
 public class CustomArgumentControllerTests {
 	private MockMvc mockMvc;

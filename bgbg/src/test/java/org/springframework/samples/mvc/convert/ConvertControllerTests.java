@@ -16,6 +16,9 @@ import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.bgsoft.samples.mvc.convert.ConvertController;
+import com.bgsoft.samples.mvc.convert.MaskFormatAnnotationFormatterFactory;
+
 public class ConvertControllerTests {
 	
 	private MockMvc mockMvc;

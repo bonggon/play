@@ -8,6 +8,8 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 import org.junit.Test;
 import org.springframework.http.MediaType;
 
+import com.bgsoft.samples.mvc.simple.SimpleControllerRevisited;
+
 public class SimpleControllerRevisitedTests {
 
 	@Test

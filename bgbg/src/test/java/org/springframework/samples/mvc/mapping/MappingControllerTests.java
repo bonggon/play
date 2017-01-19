@@ -78,20 +78,6 @@ public class MappingControllerTests extends AbstractContextControllerTests {
 	}
 
 	@Test
-	public void byProducesAcceptJson() throws Exception {
-		this.mockMvc.perform(get("/mapping/produces").accept(MediaType.APPLICATION_JSON))
-				.andExpect(jsonPath("$.foo").value("bar"))
-				.andExpect(jsonPath("$.fruit").value("apple"));
-	}
-
-	@Test
-	public void byProducesAcceptXml() throws Exception {
-		this.mockMvc.perform(get("/mapping/produces").accept(MediaType.APPLICATION_XML))
-				.andExpect(xpath("/javaBean/foo").string("bar"))
-				.andExpect(xpath("/javaBean/fruit").string("apple"));
-	}
-
-	@Test
 	public void byProducesJsonExtension() throws Exception {
 		this.mockMvc.perform(get("/mapping/produces.json"))
 				.andExpect(jsonPath("$.foo").value("barddddddddddd"))

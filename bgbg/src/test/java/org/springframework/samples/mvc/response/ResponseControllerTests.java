@@ -13,6 +13,8 @@ import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.bgsoft.samples.mvc.response.ResponseController;
+
 public class ResponseControllerTests {
 
 	private MockMvc mockMvc;
@@ -27,16 +29,6 @@ public class ResponseControllerTests {
 		this.mockMvc.perform(get("/response/annotation"))
 				.andExpect(status().isOk())
 				.andExpect(content().string("The String ResponseBody"));
-	}
-
-	@Test
-	public void responseCharsetAccept() throws Exception {
-		this.mockMvc.perform(
-				get("/response/charset/accept")
-					.accept(new MediaType("text", "plain", Charset.forName("UTF-8"))))
-				.andExpect(status().isOk())
-				.andExpect(content().string(
-						"\u3053\u3093\u306b\u3061\u306f\u4e16\u754c\uff01 (\"Hello world!\" in Japanese)"));
 	}
 
 	@Test

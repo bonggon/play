@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:/config/property/globals.properties</value>
+            </list>
+        </property>
+    </bean>
+    
+	<!-- SqlSession setup for MyBatis Database Layer -->
+	<bean id="sqlSession" class="com.bgsoft.util.mybatis.RefreshableSqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:/config/sqlmap/${Globals.DbType}/config/sql-mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:/config/sqlmap/${Globals.DbType}/mappers/*.xml" />		
+		<property name="interval" value="2000" /> <!-- mapper xml 파일을 재로딩 하는 간격 -->
+	</bean>
+	
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSession"/>
+    </bean> 
+			
+</beans>	

@@ -1,8 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
+<%@ page contentType = "text/html;charset=utf-8" %>
 <html>
 <head>
-	<title>spring-mvc-showcase</title>
+	<title>바글바글</title>
 	<link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />		
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.core.css" />" rel="stylesheet" type="text/css"/>
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.theme.css" />" rel="stylesheet" type="text/css"/>
@@ -16,7 +17,7 @@
 	<meta name="_csrf_header" content="${_csrf.headerName}"/>
 </head>
 <body>
-<h1><a href="<c:url value="/" />">spring-mvc-showcase</a></h1>
+<h1><a href="<c:url value="/" />">바글바글 쉐어링 서비스</a></h1>
 <p>Recommended: Using a Web Developer tool such a Firebug to inspect the client/server interaction</p>
 <div id="tabs">
 	<ul>
@@ -41,7 +42,13 @@
 		</p>
 		<ul>
 			<li>
+				<a id="simpleLink" class="textLink" href="<c:url value="/emp/retrieveEmployeeList" />">Get Employee List</a>
+			</li>
+			<li>
 				<a id="simpleLink" class="textLink" href="<c:url value="/simple" />">GET /simple</a>
+			</li>
+			<li>
+				<a id="simpleException" class="textLink" href="<c:url value="/simple/exception" />">GET exception handling</a>
 			</li>
 			<li>
 				<a id="simpleRevisited" class="textLink" href="<c:url value="/simple/revisited" />">GET /simple/revisited</a>
@@ -64,13 +71,16 @@
 				<a id="byMethod" class="textLink" href="<c:url value="/mapping/method" />">By path and method</a>
 			</li>
 			<li>
+				<a id="byMethod2" class="textLink" href="<c:url value="/mapping/method" />">By path and method</a>
+			</li>
+			<li>
 				<a id="byParameter" class="textLink" href="<c:url value="/mapping/parameter?foo=bar" />">By path, method, and presence of parameter</a>
 			</li>
 			<li>
 				<a id="byNotParameter" class="textLink" href="<c:url value="/mapping/parameter" />">By path, method, and not presence of parameter</a>
 			</li>
 			<li>
-				<a id="byHeader" href="<c:url value="/mapping/header" />">By presence of header</a>
+				<a id="byHeader" class="textLink" href="<c:url value="/mapping/header" />">By presence of header</a>
 			</li>
 			<li>
 				<a id="byHeaderNegation" class="textLink" href="<c:url value="/mapping/header" />">By absence of header</a>
@@ -515,7 +525,7 @@ $(document).ready(function() {
 	$("form.textForm").submit(function(event) {
 		var form = $(this);
 		var button = form.children(":first");
-		$.ajax({ type: "POST", url: form.attr("action"), data: "foo", contentType: "text/plain", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
+		$.ajax({ type: "POST", url: form.attr("action"), data: "foooooooooooooooooo", contentType: "text/plain", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
 

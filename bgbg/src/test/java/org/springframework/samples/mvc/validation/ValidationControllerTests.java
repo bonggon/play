@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.bgsoft.samples.mvc.validation.ValidationController;
+
 public class ValidationControllerTests {
 
 	private MockMvc mockMvc;

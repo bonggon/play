@@ -10,8 +10,9 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
-import org.springframework.samples.mvc.data.standard.StandardArgumentsController;
 import org.springframework.test.web.servlet.MockMvc;
+
+import com.bgsoft.samples.mvc.data.standard.StandardArgumentsController;
 
 public class StandardArgumentsControllerTests {
 	private MockMvc mockMvc;

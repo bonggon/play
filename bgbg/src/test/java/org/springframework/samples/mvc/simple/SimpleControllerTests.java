@@ -7,6 +7,8 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 import org.junit.Test;
 
+import com.bgsoft.samples.mvc.simple.SimpleController;
+
 public class SimpleControllerTests {
 
 	@Test
