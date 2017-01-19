@@ -7,7 +7,7 @@
     <!-- SpEL사용 -->
     <util:properties id="dbprops" location="classpath:/config/property/globals.properties" />
     
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="#{dbprops['driverClassName']}"/>
 		<property name="url" value="#{dbprops['url']}"/>
 		<property name="username" value="#{dbprops['username']}"/>

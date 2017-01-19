@@ -9,18 +9,18 @@
 	               EMP.EMPNO,
 	               EMP.EMPNM,
 	               EMP.BIRTHDATE,
-	               EMP.TELEPHONE,
-	               EMP.ADDRESS
+	               'ssdddddddd' telephone, -- EMP.TELEPHONE,
+	               'dd' address -- EMP.ADDRESS
 	          FROM EMPLOYEE EMP
 	          WHERE 1=1
 	    ]]>
 		    <if test="searchKeyword != null">
 		        <choose>
 		            <when test="searchCondition == 1">
-		                AND EMP.EMPNO LIKE '%'|| #{searchKeyword} ||'%'
+		                AND EMP.EMPNO LIKE concat('%', #{searchKeyword}, '%')
 		            </when>
 		            <otherwise>
-		               AND EMP.EMPNM LIKE '%'|| #{searchKeyword} ||'%'
+		               AND EMP.EMPNM LIKE concat('%', #{searchKeyword}, '%')
 		            </otherwise>
 		        </choose>
 			</if>

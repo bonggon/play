@@ -16,6 +16,11 @@
 		<egovframework.rte.version>3.5.0</egovframework.rte.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.bgee.log4jdbc-log4j2</groupId>
+			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+			<version>1.16</version>
+		</dependency>
 		<!-- MyBatis Log -->
 		<dependency>
 			<groupId>com.googlecode.log4jdbc</groupId>
