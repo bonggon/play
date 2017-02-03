@@ -10,7 +10,7 @@ public class GlobalExceptionController {
 	@ExceptionHandler(CustomGenericException.class)
 	public ModelAndView handleCustomException(CustomGenericException ex) {
 
-		ModelAndView model = new ModelAndView("views/error/generic_error");
+		ModelAndView model = new ModelAndView("error/generic_error");
 		
 		String errCode = ex.getErrCode();
 		String errMsg = ex.getErrMsg();

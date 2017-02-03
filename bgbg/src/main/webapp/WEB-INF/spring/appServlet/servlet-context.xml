@@ -36,6 +36,8 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+	
+	<resources mapping="/static/**" location="/WEB-INF/static/" />
 
 	<!-- Only needed because we install custom converters to support the examples 
 		in the org.springframewok.samples.mvc.convert package -->
