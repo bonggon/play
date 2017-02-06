@@ -43,7 +43,7 @@ require([ 'marionette', 'js/Application', 'js/Router'
 	
 	TodoMVC.App.on('start', function () {
 		var controller = new Router.Controller();
-		controller.router = new Router.Router({
+		var router = new Router.Router({
 			controller: controller
 		});
 
