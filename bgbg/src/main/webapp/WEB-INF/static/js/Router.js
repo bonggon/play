@@ -15,7 +15,7 @@ define([
 	// the active vs complete todo items
 	var Router = Mn.AppRouter.extend({
 		appRoutes: {
-			'*filter': 'filterItems'
+			'*whateverIsComming': 'filterItems'
 		}
 	});
 
