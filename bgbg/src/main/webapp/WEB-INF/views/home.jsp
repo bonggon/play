@@ -1,1 +1,1 @@
-<jsp:forward page="/static/play.html"></jsp:forward>
+<jsp:forward page="/static/marionette.html"></jsp:forward>

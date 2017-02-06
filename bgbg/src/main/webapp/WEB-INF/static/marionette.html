@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-framework="marionettejs">
+<head>
+<meta charset="utf-8">
+<title>Marionette • TodoMVC</title>
+<link rel="stylesheet" href="static/css/marionette/index.css">
+<link rel="stylesheet" href="static/css/marionette/base.css">
+<link rel="stylesheet" href="static/css/marionette/app.css">
+</head>
+<body>
+	<section id="todoapp">
+		<header id="header"></header>
+		<section id="main"></section>
+		<footer id="footer"></footer>
+	</section>
+	<footer id="info">
+		<p>Double-click to edit a todo</p>
+		<p>
+			Done by <a href="http://sfzen.co.kr"><b>SFZEN</b></a> using <a href="http://marionettejs.com">Backbone.Marionette</a> 프레임워크 && Requiredjs && Handlebar
+		</p>
+		<p>
+			See who else is using marionette at <a
+				href="http://marionettejs.com/">marionettejs.com</a>.
+		</p>
+	</footer>
+	<script type="text/html" id="template-header">
+			<h1>todos</h1>
+			<input id="new-todo" placeholder="하고싶은 일 vs. 해야할 일?" autofocus>
+		</script>
+	<script type="text/html" id="template-todoListView">
+			<input id="toggle-all" type="checkbox">
+			<label for="toggle-all">Mark all as complete</label>
+			<ul></ul>
+		</script>
+	<script data-main="static/main" src="static/bower_components/requirejs/require.js"></script>
+</body>
+</html>

@@ -3,22 +3,22 @@ package com.bgsoft.samples.cmmn;
 public class Todo {
 
     private final String id;
-    private final String completed;
+    private final boolean completed;
     private final String title;
     
     public Todo() {
-    	this.completed = "";
+    	this.completed = false;
     	this.title = "";
     	this.id = "";
     }
 
-    public Todo(String id, String completed, String title) {
+    public Todo(String id, boolean completed, String title) {
         this.completed = completed;
         this.title = title;
         this.id = id;
     }
 
-    public String getCompleted() {
+    public boolean getCompleted() {
         return completed;
     }
 

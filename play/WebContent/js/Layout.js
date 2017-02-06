@@ -53,6 +53,7 @@ define([
 				this.collection.create({
 					title: todoText
 				});
+				
 				this.ui.input.val('');
 			}
 		}
@@ -67,9 +68,9 @@ define([
 		// point to jQuery selected objects
 		ui: {
 			filters: '#filters a',
-			completed: '.completed a',
-			active: '.active a',
-			all: '.all a',
+			completed: 'li .completed',
+			active: 'li .active ',
+			all: 'li .all ',
 			summary: '#todo-count',
 			clear: '#clear-completed'
 		},
@@ -104,14 +105,15 @@ define([
 		},
 
 		onRender: function () {
+			// todo 목록이 없으면 footer 섹션을 숨긴다.
 			this.$el.parent().toggle(this.collection.length > 0);
 			this.updateFilterSelection();
 		},
 
 		updateFilterSelection: function () {
 			this.ui.filters.removeClass('selected');
-			this.ui[filterChannel.request('filterState').get('filter')]
-			.addClass('selected');
+			var filter = filterChannel.request('filterState').get('filter');
+			this.ui[filter].addClass('selected');
 		},
 
 		onClearClick: function () {
