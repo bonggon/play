@@ -15,6 +15,7 @@ define([
 
 		// Toggle the `completed` state of this todo item.
 		toggle: function () {
+			console.log('todo item is toggled.')
 			this.save({
 				completed: !this.get('completed')
 			});

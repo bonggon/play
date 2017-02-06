@@ -36,33 +36,25 @@ require.config({
 	}
 });
 	
-require([ 'marionette', 'views/app', 'routers/router' ], function(
-		 Mn, myView, Workspace) {
+require([ 'marionette', 'js/Application', 'js/Router' ], function(
+		 Mn, TodoMVC, Router) {
 	
 	const loadInitialData = function() {
 	  return Promise.resolve();
 	};
 	
-	// Create our app
-	var app = new Mn.Application({region: '#info'
-	});
+	// After we initialize the app, we want to kick off the router
+	// and controller, which will handle initializing our Views
+	TodoMVC.App.on('start', function () {
+		var controller = new Router.Controller();
+		controller.router = new Router.Router({
+			controller: controller
+		});
 
-	app.on('start', function() { 
-		new Workspace();
+		controller.start();
 		Backbone.history.start();
-		
-		var appView = new myView.AppView();
-		
-		var testView = new myView.TestView();
-		myView.region.show(testView);	
-		
-		testView.showChildView('helloRegion', new myView.SubView());
-		
-		console.log(app.getRegion());
-		
-		app.getRegion().show(testView);
 	});
 
 	// Load some initial data, and then start our application
-	loadInitialData().then(() => app.start());
+	loadInitialData().then(() => TodoMVC.App.start());
 });
