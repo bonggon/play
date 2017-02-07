@@ -1,4 +1,46 @@
+//Append '#' to the window location so "Back" returns to the selected tab
+//after a redirect or a full page refresh (e.g. Views tab).
 
+//However, note this general disclaimer about going back to previous tabs:
+//http://docs.jquery.com/UI/API/1.8/Tabs#Back_button_and_bookmarking
+
+MvcUtil = {};
+MvcUtil.showSuccessResponse = function(text, element) {
+	MvcUtil.showResponse("success", text, element);
+};
+MvcUtil.showErrorResponse = function showErrorResponse(text, element) {
+	MvcUtil.showResponse("error", text, element);
+};
+MvcUtil.showResponse = function(type, text, element) {
+	var responseElementId = element.attr("id") + "Response";
+	var responseElement = $("#" + responseElementId);
+	if (responseElement.length == 0) {
+		responseElement = $(
+				'<span id="' + responseElementId + '" class="' + type
+						+ '" style="display:none">' + text + '</span>')
+				.insertAfter(element);
+	} else {
+		responseElement.replaceWith('<span id="' + responseElementId
+				+ '" class="' + type + '" style="display:none">' + text
+				+ '</span>');
+		responseElement = $("#" + responseElementId);
+	}
+	responseElement.fadeIn("slow");
+};
+MvcUtil.xmlencode = function(xml) {
+	// for IE
+	var text;
+	if (window.ActiveXObject) {
+		text = xml.xml;
+	}
+	// for Mozilla, Firefox, Opera, etc.
+	else {
+		text = (new XMLSerializer()).serializeToString(xml);
+	}
+	return text.replace(/\&/g, '&' + 'amp;').replace(/</g, '&' + 'lt;')
+			.replace(/>/g, '&' + 'gt;').replace(/\'/g, '&' + 'apos;').replace(
+					/\"/g, '&' + 'quot;');
+};
 
 $("#tabs").bind("tabsselect", function(event, ui) {
 	window.location.hash = ui.tab.hash;

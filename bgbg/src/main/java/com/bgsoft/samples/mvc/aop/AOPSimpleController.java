@@ -15,7 +15,7 @@ public class AOPSimpleController {
 	@Autowired
     private Customer customer;
 
-	@RequestMapping("/play/with/aop")
+	@RequestMapping(value="/play/with/aop", produces = "application/json; charset=utf8")
 	public @ResponseBody String playWithAOP() throws Exception {
 		
 		customer.addCustomer();

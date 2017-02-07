@@ -6,6 +6,6 @@
 		
 	</p>
 	<ul>
-		<li><a id="simpleLink" class="textLink" href="<c:url value="/emp/retrieveEmployeeList" />">Play With CRUD</a></li>
+		<li><a id="crudLink" class="textLink" href="<c:url value="/emp/retrieveEmployeeList" />">Play With CRUD</a></li>
 	</ul>
 </div>

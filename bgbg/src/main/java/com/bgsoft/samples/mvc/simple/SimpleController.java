@@ -15,18 +15,12 @@ public class SimpleController {
 	@Autowired
     private Customer customer;
 
-	@RequestMapping("/backbone")
-	public String backbone() throws Exception {
-		
-		return "forward:/static/play.html";
-	}
-	
-	@RequestMapping("/simple")
-	public String simple() throws Exception {
+	@RequestMapping(value="/simple", produces = "application/json; charset=utf8")
+	public @ResponseBody String simple() throws Exception {
 		
 		customer.addCustomer();
 		
-		return "forward:/static/play.html";
+		return "Hello world! 한글";
 	}
 	
 	@RequestMapping(value="/simple/exception", method=RequestMethod.GET, headers="Accept=text/plain")
